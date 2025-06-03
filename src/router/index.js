@@ -7,10 +7,12 @@ import HomeView from '../components/CatsFact&Image/HomeView.vue';
 import ImageView from '../components/CatsFact&Image/ImageView.vue';
 import FactView from '../components/CatsFact&Image/FactView.vue';
 import MainComponent2 from '../components/My-To-do-List/mainComponent.vue'
+import DefaultComponent from '../components/DefaultComponent.vue';
 
 
 
 const routes = [
+  { path: '/', component: DefaultComponent },
   { path: '/excursion', component: MainComponent },
   { path: '/excursion/excursions/:id', component: ExcursionPage, name: 'excursion' },
 
@@ -20,6 +22,7 @@ const routes = [
   { path: '/Cats/Image', component: ImageView},
 
   { path: '/My-To-Do-List', component: MainComponent2},
+
 
 
 ]
