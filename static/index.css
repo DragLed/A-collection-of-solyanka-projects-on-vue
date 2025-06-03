@@ -1,0 +1,174 @@
+body {
+  display: flex;
+}
+
+.N img{
+  height: 50px;
+  width: 50px;
+}
+
+.N {
+  margin: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.glavniymenu {
+  padding-top: 10px;
+  background-color: #13131d;
+  width: 18%;
+  height: 100%;
+}
+.menu:hover{
+  background-color: grey;
+  color: black;
+
+}
+.menu {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.menu img{
+  height: 20px;
+  width: 20px;
+  margin-left: 35px;
+
+}
+
+
+.menu span{
+  margin-left: 20px;
+  color: #65696a;
+
+
+}
+
+.glavniymenu p {
+  color: White;
+  padding-top: 10px;
+  margin-left: 35px;
+
+}
+
+.Nax {
+  width: 82%;
+  background-color: #101825;
+  height: 800px;
+  padding-bottom: 180px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 35px;
+}
+
+.Search {
+  display: flex;
+  align-items: center;
+}
+
+.Search input{
+  border: None;
+  background-color: #1c202c;
+  color: grey;
+  height: 30px;
+  margin-right: 7px;
+  width: 270px;
+}
+
+.Search img {
+  height: 30px;
+  width: 30px;
+
+}
+
+.Logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Logo img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+
+}
+
+.Logo span {
+  color: White;
+  margin-right: 15px;
+  font-size: 12.5px;
+}
+
+.content{
+  margin: 35px;
+}
+
+
+.content p {
+  margin-top: 40px;
+  color: White;
+  font-size: 20px;
+}
+
+.content div{
+  display: flex;
+  align-items: center;
+
+
+}
+.content img{
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 45px;
+}
+
+.content img:hover {
+  opacity: 0.7;
+}
+
+.menu1:hover {
+  background-color: grey;
+}
+
+.nn {
+  color: grey;
+  font-size: 10px;
+}
+.menu1{
+  margin-top: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.menu1 span {
+  color: grey;
+  margin-top: 50px;
+  margin-left: 10px;
+}
+.menu1 img{
+  height: 20px;
+  width: 20px;
+  margin-left: 35px;
+
+}
+
+
+
+.nn {
+  margin: 35px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}

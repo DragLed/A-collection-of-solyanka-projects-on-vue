@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+}
+
+
+.container1 {
+    height: 300px;
+    width: 300px;
+    border-radius: 150px;
+    background-color: red;
+}
+
+.container2 {
+    height: 300px;
+    width: 300px;
+    border-radius: 150px;
+    margin-top: -300px;
+    margin-left: 250px;
+    background-color:  red;
+}
+
+.container3 {
+    height: 300px;
+    width: 300px;
+    background-color: red;
+    rotate: 45deg;
+    margin-top: -200px;
+    margin-left: 100px;
+}
+.container4 {
+    height: 300px;
+    width: 300px;
+    background-color: red;
+    rotate: 45deg;
+    margin-top: -300px;
+    margin-left: 150px;
+}
+.container5 {
+     height: 300px;
+    width: 300px;
+    background-color: red;
+    rotate: 45deg;
+    margin-top: -275px;
+    margin-left: 125px; 
+}
+
+
+div:hover{
+   opacity: 80%;
+}

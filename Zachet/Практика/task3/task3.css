@@ -1,0 +1,21 @@
+body{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.flex-container{
+  padding: 20px;
+  background-color: gainsboro;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 50%;
+  border-radius: 10px;
+}
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 5px;
+}

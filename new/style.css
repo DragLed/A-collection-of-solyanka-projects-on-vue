@@ -1,0 +1,14 @@
+.btn-Blue {
+  background-color: #29b6f6;
+  border: None;
+  padding: 10px;
+  border-radius: 8px;
+
+}
+
+.btn-Red {
+  background-color: #ff0000;
+  border: None;
+  padding: 10px;
+  border-radius: 8px;
+}
