@@ -1,7 +1,7 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router'
-import MainComponent from '../components/Citytravel/mainComponent.vue'
-import ExcursionPage from '../components/Citytravel/excursionPage.vue'
+import MainComponent from '../components/CityTravel/homeComponent.vue'
+import ExcursionPage from '../components/CityTravel/excursionPage.vue'
 // import TestComponent from '../components/TestComponent.vue';
 import HomeView from '../components/CatsFact&Image/HomeView.vue';
 import ImageView from '../components/CatsFact&Image/ImageView.vue';
