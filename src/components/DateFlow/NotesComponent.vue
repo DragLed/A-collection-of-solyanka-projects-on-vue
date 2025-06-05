@@ -1,59 +1,79 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 interface Note {
   id: string
   content: string
 }
 
-const notes = ref<Note[]>([]);
-const newNote = ref('');
+const notes = ref<Note[]>([])
+const newNote = ref('')
 
-const showConfirm = ref(false);
-const noteToDelete = ref<string | null>(null);
+const showConfirm = ref(false)
+const noteToDelete = ref<string | null>(null)
 
 function addNote() {
-  if (!newNote.value.trim()) return;
-  notes.value.push({ id: Date.now().toString(), content: newNote.value.trim() });
-  newNote.value = '';
-  saveNotes();
+  if (!newNote.value.trim()) return
+
+  notes.value.push({
+    id: Date.now().toString(),
+    content: newNote.value.trim()
+  })
+  newNote.value = ''
+  saveNotes()
 }
 
 function askRemoveNote(id: string) {
-  noteToDelete.value = id;
-  showConfirm.value = true;
+  noteToDelete.value = id
+  showConfirm.value = true
 }
 
 function confirmRemove() {
   if (noteToDelete.value) {
-    notes.value = notes.value.filter(n => n.id !== noteToDelete.value);
-    saveNotes();
+    notes.value = notes.value.filter(n => n.id !== noteToDelete.value)
+    saveNotes()
   }
-  closeConfirm();
+  closeConfirm()
 }
 
 function closeConfirm() {
-  showConfirm.value = false;
-  noteToDelete.value = null;
+  showConfirm.value = false
+  noteToDelete.value = null
 }
 
+// Сохранение заметок в localStorage
 function saveNotes() {
-  localStorage.setItem('notes', JSON.stringify(notes.value));
-}
-
-function loadNotes() {
-  const saved = localStorage.getItem('notes');
-  if (saved) {
-    notes.value = JSON.parse(saved);
+  try {
+    localStorage.setItem('notes', JSON.stringify(notes.value))
+  } catch (e) {
+    console.error('Ошибка сохранения заметок:', e)
   }
 }
 
-loadNotes();
+// Загрузка заметок из localStorage с валидацией структуры
+function loadNotes() {
+  const saved = localStorage.getItem('notes')
+  if (!saved) return
+
+  try {
+    const parsed = JSON.parse(saved)
+    // Проверка, что это массив и у всех элементов есть корректные id и content
+    if (Array.isArray(parsed) && parsed.every(n => typeof n.id === 'string' && typeof n.content === 'string')) {
+      notes.value = parsed
+    } else {
+      console.warn('Некорректная структура данных заметок, очищаю localStorage.')
+      localStorage.removeItem('notes')
+    }
+  } catch (e) {
+    console.error('Ошибка при разборе заметок:', e)
+    localStorage.removeItem('notes')
+  }
+}
+
+onMounted(loadNotes)
 </script>
 
 <template>
-  <div class="Router"><router-link to="/DateFlower" class="nav-link">Вернуться к датам</router-link></div>
-  
   <section class="notes-container">
     <h2>Любовные записки ❤️</h2>
 
@@ -65,6 +85,9 @@ loadNotes();
       ></textarea>
       <button @click="addNote" :disabled="!newNote.trim()">Добавить</button>
     </div>
+
+    <!-- Для отладки: вывод количества заметок -->
+    <!-- <p style="text-align:center; margin-top:1rem">Записок: {{ notes.length }}</p> -->
 
     <ul class="notes-list" v-if="notes.length">
       <li v-for="note in notes" :key="note.id" class="note-item">
@@ -205,7 +228,6 @@ button:hover:not(:disabled) {
 }
 
 /* Модальное окно подтверждения */
-
 .confirm-overlay {
   position: fixed;
   top: 0;
@@ -267,29 +289,5 @@ button:hover:not(:disabled) {
 
 .btn-confirm:hover {
   background: #d32f2f;
-}
-.Router {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-.nav-link {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #ffffff;
-  background: linear-gradient(145deg, #4dabf7, #1e90ff);
-  box-shadow: 0 0 10px rgba(77, 171, 247, 0.6), 0 0 5px rgba(77, 171, 247, 0.3);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.nav-link:hover {
-  background: linear-gradient(145deg, #63b3ff, #3598ff);
-  box-shadow: 0 0 15px rgba(77, 171, 247, 0.8), 0 0 10px rgba(77, 171, 247, 0.4);
-  transform: translateY(-2px);
 }
 </style>
