@@ -10,6 +10,7 @@ import MainComponent2 from '../components/My-To-do-List/mainComponent.vue'
 import DefaultComponent from '../components/IntroCompomemts/DefaultComponent.vue';
 import AboutComponent from '@/components/IntroCompomemts/AboutComponent.vue';
 import MainComponent3 from '@/components/DateFlow/MainComponent.vue';
+import DateInputComponent from '@/components/DateFlow/DateInputComponent.vue';
 
 
 
@@ -18,6 +19,7 @@ const routes = [
   { path: '/aboutMe', component: AboutComponent },
 
   {path: '/DateFlower', component: MainComponent3},
+  { path: '/DateFlower/DateInput', component: DateInputComponent },
 
   { path: '/excursion', component: MainComponent },
   { path: '/excursion/excursions/:id', component: ExcursionPage, name: 'excursion' },
