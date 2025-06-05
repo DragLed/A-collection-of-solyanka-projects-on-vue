@@ -74,6 +74,8 @@ onMounted(loadNotes)
 </script>
 
 <template>
+  <router-link to="/DateFlower" class="nav-link">Вернуться
+  </router-link>
   <section class="notes-container">
     <h2>Любовные записки ❤️</h2>
 
@@ -289,5 +291,31 @@ button:hover:not(:disabled) {
 
 .btn-confirm:hover {
   background: #d32f2f;
+}
+
+.Router {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.nav-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  margin: 25px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(145deg, #4dabf7, #1e90ff);
+  box-shadow: 0 0 10px rgba(77, 171, 247, 0.6), 0 0 5px rgba(77, 171, 247, 0.3);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.nav-link:hover {
+  background: linear-gradient(145deg, #63b3ff, #3598ff);
+  box-shadow: 0 0 15px rgba(77, 171, 247, 0.8), 0 0 10px rgba(77, 171, 247, 0.4);
+  transform: translateY(-2px);
 }
 </style>

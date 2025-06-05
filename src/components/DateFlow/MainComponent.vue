@@ -169,7 +169,7 @@ onMounted(() => {
 <template>
   
     <div class="Router">
-      <router-link to="/DateFlower/Notes" class="nav-link">Написать записку❤️</router-link>
+      <!-- <router-link to="/DateFlower/Notes" class="nav-link">Написать записку❤️</router-link> -->
       <router-link to="/DateFlower/DateInput" class="nav-link">Установить дату</router-link>
   </div>
   <section class="date-container">
