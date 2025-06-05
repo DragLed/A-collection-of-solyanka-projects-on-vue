@@ -167,8 +167,13 @@ onMounted(() => {
 </script>
 
 <template>
+  
+    <div class="Router">
+      <router-link to="/DateFlower/Notes" class="nav-link">Написать записку❤️</router-link>
+      <router-link to="/DateFlower/DateInput" class="nav-link">Установить дату</router-link>
+  </div>
   <section class="date-container">
-    <router-link to="/DateFlower/DateInput" class="nav-link">Установить дату</router-link>
+    
     <p class="current-diff">
   Мы вместе уже❤️: <strong>{{ differenceDateInMonthsAndDays }}</strong>  
   (<em>{{ differenceDateInDays }}</em>)
@@ -278,10 +283,16 @@ onMounted(() => {
 .date-list li.today .difference {
   color: #20c997;
 }
+.Router {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
 .nav-link {
   display: inline-block;
-  margin-left: auto;
   margin-bottom: 1.5rem;
+  margin: 25px;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   font-size: 1rem;
@@ -292,7 +303,6 @@ onMounted(() => {
   text-decoration: none;
   transition: all 0.3s ease;
 }
-
 .nav-link:hover {
   background: linear-gradient(145deg, #63b3ff, #3598ff);
   box-shadow: 0 0 15px rgba(77, 171, 247, 0.8), 0 0 10px rgba(77, 171, 247, 0.4);

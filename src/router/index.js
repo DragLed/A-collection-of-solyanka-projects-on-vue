@@ -11,6 +11,7 @@ import DefaultComponent from '../components/IntroCompomemts/DefaultComponent.vue
 import AboutComponent from '@/components/IntroCompomemts/AboutComponent.vue';
 import MainComponent3 from '@/components/DateFlow/MainComponent.vue';
 import DateInputComponent from '@/components/DateFlow/DateInputComponent.vue';
+import NotesComponent from '@/components/DateFlow/NotesComponent.vue';
 
 
 
@@ -20,6 +21,8 @@ const routes = [
 
   {path: '/DateFlower', component: MainComponent3},
   { path: '/DateFlower/DateInput', component: DateInputComponent },
+  { path: '/DateFlower/Notes', component: NotesComponent },
+
 
   { path: '/excursion', component: MainComponent },
   { path: '/excursion/excursions/:id', component: ExcursionPage, name: 'excursion' },
