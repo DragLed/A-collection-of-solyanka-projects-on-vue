@@ -9,6 +9,7 @@
         <router-link to="/excursion" class="nav-link">Экскурсии</router-link>
         <router-link to="/Cats" class="nav-link">Коты</router-link>
         <router-link to="/My-To-Do-List" class="nav-link">📝 My To-Do List</router-link>
+        <router-link to="/Memmarket" class="nav-link">МемМаркет</router-link>
         <router-link to="/DateFlower" class="nav-link">❤️ Даты</router-link>
 
         <div class="nav-decoration"></div>

@@ -12,12 +12,17 @@ import AboutComponent from '@/components/IntroCompomemts/AboutComponent.vue';
 import MainComponent3 from '@/components/DateFlow/MainComponent.vue';
 import DateInputComponent from '@/components/DateFlow/DateInputComponent.vue';
 import NotesComponent from '@/components/DateFlow/NotesComponent.vue';
+import MainComponent4 from '@/components/Memmarket/MainComponent.vue';
+import FavoritesView from '@/components/Memmarket/FavoritesView.vue';
 
 
 
 const routes = [
   { path: '/', component: DefaultComponent },
   { path: '/aboutMe', component: AboutComponent },
+
+  { path: '/Memmarket', component: MainComponent4},
+  { path: '/Memmarket/favorites', component: FavoritesView},
 
   {path: '/DateFlower', component: MainComponent3},
   { path: '/DateFlower/DateInput', component: DateInputComponent },
