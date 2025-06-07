@@ -161,382 +161,134 @@ onMounted(() => {
 
 <style scoped>
 
-.home-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  color: #e0e0e0;
-  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-
-.search-bar-container {
-  display: flex;
-  margin-bottom: 30px;
-  position: relative;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.search-input {
-  flex: 1;
-  padding: 15px 20px;
-  background-color: #1f1f1f;
-  border: 1px solid #333;
-  border-right: none;
-  color: #e0e0e0;
-  border-radius: 30px 0 0 30px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.search-input:focus {
-  outline: none;
-  border-color: #9b00ff;
-  box-shadow: 0 0 0 2px rgba(155, 0, 255, 0.2);
-}
-
-.search-button {
-  padding: 0 25px;
-  background: linear-gradient(135deg, #9b00ff 0%, #6a00ff 100%);
-  color: #fff;
-  border: none;
-  border-radius: 0 30px 30px 0;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.search-button:hover {
-  background: linear-gradient(135deg, #8a00e6 0%, #5a00e6 100%);
-  transform: translateY(-1px);
-}
-
-.button-icon {
-  font-size: 18px;
-}
-
-/* Карточки экскурсий */
-.excursion-results-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 25px;
-  margin-bottom: 40px;
-}
-
-.excursion-card {
-  background: linear-gradient(145deg, #1f1f1f 0%, #252525 100%);
-  border: 1px solid #333;
-  border-radius: 12px;
-  padding: 15px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 300px;
-}
-
-.excursion-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border-color: #9b00ff;
-}
-
-.card-image-placeholder {
-  background: linear-gradient(135deg, #9b00ff 0%, #6a00ff 100%);
-  height: 120px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-  position: relative;
-  overflow: hidden;
-}
-
-.image-text {
-  font-size: 60px;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.2);
-}
-
-.card-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.excursion-card h3 {
-  margin: 0 0 10px;
-  font-size: 18px;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.description {
-  color: #b0b0b0;
-  font-size: 14px;
-  margin-bottom: 15px;
-  flex: 1;
-}
-
-.card-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: auto;
-}
-
-.detail-item {
-  background: rgba(40, 40, 40, 0.7);
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.card-badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #ff5722;
-  color: white;
-  padding: 3px 10px;
-  border-radius: 15px;
-  font-size: 12px;
-  font-weight: bold;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-/* История */
-.history-section {
-  background: linear-gradient(145deg, #1e1e1e 0%, #222222 100%);
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border: 1px solid #333;
-}
-
-.history-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.history-header h4 {
-  margin: 0;
-  font-size: 18px;
-  color: #9b00ff;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.clear-history-button {
-  background: rgba(255, 75, 75, 0.2);
-  color: #ff6b6b;
-  border: none;
-  padding: 5px 15px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.clear-history-button:hover {
-  background: rgba(255, 75, 75, 0.3);
-}
-
-.history-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.history-item {
-  background: rgba(40, 40, 40, 0.6);
-  border-radius: 8px;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: all 0.25s ease;
-}
-
-.history-item:hover {
-  background: rgba(50, 50, 50, 0.8);
-  transform: translateX(5px);
-}
-
-.history-info {
-  flex: 1;
-  cursor: pointer;
-}
-
-.history-name {
-  font-weight: 500;
-  color: #f0f0f0;
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.history-meta {
-  display: flex;
-  gap: 15px;
-}
-
-.history-date {
-  font-size: 12px;
-  color: #aaa;
-}
-
-.history-id {
-  font-size: 12px;
-  color: #888;
-  font-family: monospace;
-}
-
-.delete-button {
-  background: none;
-  border: none;
-  color: #ff6b6b;
-  cursor: pointer;
-  font-size: 16px;
-  transition: all 0.2s ease;
-  padding: 5px;
-  border-radius: 50%;
-}
-
-.delete-button:hover {
-  background: rgba(255, 75, 75, 0.2);
-  transform: scale(1.2);
-}
-
-.empty-history {
-  text-align: center;
-  padding: 30px;
-  color: #666;
-  font-style: italic;
-}
-
-.empty-history img {
-  width: 100px;
-  opacity: 0.5;
-  margin-bottom: 15px;
-}
-
-/* Загрузка */
-.loading-spinner {
-  display: flex;
-  justify-content: center;
-  padding: 50px;
-}
-
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(155, 0, 255, 0.2);
-  border-radius: 50%;
-  border-top-color: #9b00ff;
-  animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.no-results {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 40px;
-}
-
-.no-results-image {
-  width: 150px;
-  opacity: 0.7;
-  margin-bottom: 20px;
-}
-
-.reset-button {
-  background: rgba(155, 0, 255, 0.1);
-  color: #bb86fc;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.reset-button:hover {
-  background: rgba(155, 0, 255, 0.2);
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .home-page {
+.MainForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    color: #e0e0e0;
     padding: 15px;
-  }
-  
-  .search-bar-container {
-    flex-direction: column;
-  }
-  
-  .search-input {
-    border-radius: 20px;
-    margin-bottom: 10px;
-    border-right: 1px solid #333;
-  }
-  
-  .search-button {
-    border-radius: 20px;
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .excursion-results-section {
-    grid-template-columns: 1fr;
-  }
-  
-  .history-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-  
-  .delete-button {
-    align-self: flex-end;
-  }
 }
 
-@media (max-width: 480px) {
-  .card-details {
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  .history-meta {
-    flex-direction: column;
-    gap: 5px;
-  }
+.TextForm {
+    color: #a5d8ff;
+    margin-bottom: 1.5rem;
 }
+
+.Image {
+    background-color: rgba(40, 42, 54, 0.8);
+    max-width: 600px;
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Image img {
+    height: 300px;
+    width: 300px;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.Image img:hover {
+    transform: scale(1.02);
+}
+
+.ReloadBtn {
+    background-color: #4dabf7;
+    color: white;
+    border: none;
+    margin-top: 25px;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(77, 171, 247, 0.2);
+}
+
+.ReloadBtn:hover {
+    background-color: #339af0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(77, 171, 247, 0.3);
+}
+
+select {
+    background-color: rgba(40, 42, 54, 0.8);
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 15px;
+    margin-top: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 200px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+select:hover {
+    border-color: rgba(77, 171, 247, 0.5);
+}
+
+select:focus {
+    outline: none;
+    border-color: #4dabf7;
+    box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.2);
+}
+
+label {
+    margin-right: 10px;
+    color: #a5d8ff;
+    font-size: 1rem;
+}
+
+/* Адаптив для телефонов */
+@media (max-width: 480px) {
+    .TextForm {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .Image img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        border-radius: 15px;
+    }
+
+    .ReloadBtn {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 1.1rem;
+        margin-top: 15px;
+        border-radius: 12px;
+    }
+
+    select {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 10px 12px;
+        margin-top: 1rem;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 1.1rem;
+    }
+}
+
 </style>

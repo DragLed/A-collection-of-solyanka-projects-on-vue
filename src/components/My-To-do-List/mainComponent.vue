@@ -212,4 +212,57 @@ button:active {
 .Note:first-child {
   animation: fadeIn 0.3s ease-out, pulse 0.5s ease 0.3s;
 }
+
+/* Адаптив для мобильных устройств */
+@media (max-width: 480px) {
+  .To-Do-Container {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .Input {
+    flex-direction: column;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.8rem 0;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .taskList {
+    gap: 0.6rem;
+  }
+
+  .Note {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .Note p {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .Note button {
+    align-self: flex-end;
+    padding: 0.5rem 1rem;
+    margin-left: 0;
+    font-size: 0.9rem;
+  }
+}
+
 </style>

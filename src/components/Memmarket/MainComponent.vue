@@ -300,4 +300,55 @@ button.active:hover {
   transform: translateY(-2px);
 }
 
+@media (max-width: 768px) {
+  .search {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: stretch;
+    width: 90%;
+    margin: 1rem auto 2rem;
+  }
+
+  input[type="text"],
+  select,
+  button {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .meme-list {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .meme-item {
+    max-width: 100%;
+    padding: 0.8rem;
+  }
+
+  .meme-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .nav-link {
+    margin: 1rem auto;
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-header {
+    font-size: 1.5rem;
+  }
+
+  button {
+    padding: 0.6rem 1rem;
+  }
+}
+
+
 </style>
+
+
