@@ -181,4 +181,36 @@ input:focus, textarea:focus, select:focus {
   border-color: #4dabf7;
   box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.2);
 }
+
+@media (max-width: 600px) {
+  .main-nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    background: rgba(20, 20, 25, 0.95);
+  }
+
+  .nav-link {
+    font-size: 1.3rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0;
+  }
+
+  .nav-decoration {
+    display: none;
+  }
+
+  .app-header {
+    padding: 1rem;
+  }
+
+  .app-content {
+    padding: 1rem;
+  }
+}
+
 </style>
