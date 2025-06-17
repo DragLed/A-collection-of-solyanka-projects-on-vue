@@ -24,6 +24,8 @@ const favoriteMemesList = computed(() => {
 });
 
 const goBack = () => {
+  // Просто перезагрузим страницу или сделаем переход
+  // Например, если используешь Vue Router, можно вызвать router.back()
   window.history.back();
 };
 
@@ -32,10 +34,9 @@ onMounted(() => {
 });
 </script>
 
-<template>
-   <div class="Router">
-      <router-link to="/Memmarket" class="nav-link">Вернуться</router-link>
-  </div>
+<template> <nav class="main-nav">
+  <router-link to="/Memmarket" class="nav-link">Вернуть к выбору</router-link>
+  </nav>
   <div class="meme-list">
     <template v-if="favoriteMemesList.length > 0">
       <div class="meme-items" v-for="mem in favoriteMemesList" :key="mem.id">
@@ -56,6 +57,84 @@ onMounted(() => {
 </template>
 
 <style scoped>
+
+.main-nav {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  background: rgba(30, 30, 36, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  max-width: max-content;
+  margin: 0 auto;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background: rgba(60, 60, 70, 0.6);
+}
+
+.nav-link.router-link-exact-active {
+  color: #4dabf7;
+  font-weight: 600;
+}
+
+.nav-decoration {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4dabf7, #20c997);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: #4dabf7;
+  border-radius: 2px;
+}
+
+.nav-link.router-link-exact-active::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 12px);
+  height: calc(100% + 8px);
+  border: 2px solid rgba(77, 171, 247, 0.3);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.main-nav {
+  --glow-color: rgba(77, 171, 247, 0.1);
+  box-shadow: 0 0 15px var(--glow-color), 
+              0 4px 20px rgba(0, 0, 0, 0.3);
+}
 .meme-list {
   display: flex;
   flex-wrap: wrap;
@@ -128,53 +207,4 @@ button:active {
 .empty-favorites p {
   margin-bottom: 20px;
 }
-
-.nav-link {
-  position: relative;
-  text-decoration: none;
-  color: #e0e0e0;
-  font-weight: 500;
-  font-size: 1.1rem;
-  padding: 0.5rem 1rem;
-  transition: all 0.3s ease;
-  z-index: 1;
-  border-radius: 8px;
-}
-
-.nav-link:hover {
-  color: #ffffff;
-  background: rgba(60, 60, 70, 0.6);
-}
-
-.nav-link.router-link-exact-active {
-  color: #4dabf7;
-  font-weight: 600;
-}
-
-.Router {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-.nav-link {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  margin: 25px;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #ffffff;
-  background: linear-gradient(145deg, #4dabf7, #1e90ff);
-  box-shadow: 0 0 10px rgba(77, 171, 247, 0.6), 0 0 5px rgba(77, 171, 247, 0.3);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.nav-link:hover {
-  background: linear-gradient(145deg, #63b3ff, #3598ff);
-  box-shadow: 0 0 15px rgba(77, 171, 247, 0.8), 0 0 10px rgba(77, 171, 247, 0.4);
-  transform: translateY(-2px);
-}
-
 </style>

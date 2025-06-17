@@ -1,6 +1,6 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router'
-import MainComponent from '../components/CityTravel/homeComponent.vue'
+
 import ExcursionPage from '../components/CityTravel/excursionPage.vue'
 // import TestComponent from '../components/TestComponent.vue';
 import HomeView from '../components/CatsFact&Image/HomeView.vue';
@@ -14,6 +14,7 @@ import DateInputComponent from '@/components/DateFlow/DateInputComponent.vue';
 import NotesComponent from '@/components/DateFlow/NotesComponent.vue';
 import MainComponent4 from '@/components/Memmarket/MainComponent.vue';
 import FavoritesView from '@/components/Memmarket/FavoritesView.vue';
+import MainComponent from '@/components/CityTravel/mainComponent.vue';
 
 
 
